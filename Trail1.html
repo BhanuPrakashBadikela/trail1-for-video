@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .video-container {
+        max-width: 800px;
+        margin: 20px auto;
+        position: relative;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
+    .video-options {
+        margin-top: 10px;
+    }
+    .video-options button {
+        padding: 8px 16px;
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .video-options button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="video-container">
+    <video controls width="100px" height="100px">
+        <source src="https://d1cdttoubezer4.cloudfront.net/Trail1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-options">
+        <button onclick="changeVideo('video1.mp4')">Video 1</button>
+        <button onclick="changeVideo('video2.mp4')">Video 2</button>
+        <!-- Add more buttons for additional videos -->
+    </div>
+</div>
+
+<script>
+    function changeVideo(src) {
+        var video = document.querySelector('video');
+        video.src = src;
+        video.play();
+    }
+</script>
+
+</body>
+</html>
